@@ -1,0 +1,31 @@
+class PhoneApp {
+    public static void main(String[] args) {
+        SmartPhone[] smartPhoneArray = new SmartPhone[5];
+
+        // SmartPhone örneklerini oluşturun
+        SmartPhone phone1 = new SmartPhone(1, "Phone 1", 1999.99, "1234567890", 256, 8, 12);
+        SmartPhone phone2 = new SmartPhone(2, "Phone 2", 1799.99, "0987654321", 128, 6, 8);
+        SmartPhone phone3 = new SmartPhone(3, "Phone 3", 1599.99, "1112223334", 64, 4, 6);
+        SmartPhone phone4 = new SmartPhone(4, "Phone 4", 1499.99, "5556667778", 128, 4, 8);
+        SmartPhone phone5 = new SmartPhone(5, "Phone 5", 1399.99, "9998887776", 32, 2, 4);
+
+        // Telefonları diziye ekleyin
+        smartPhoneArray[0] = phone1;
+        smartPhoneArray[1] = phone2;
+        smartPhoneArray[2] = phone3;
+        smartPhoneArray[3] = phone4;
+        smartPhoneArray[4] = phone5;
+
+        // Toplam fiyatı hesaplayın ve ekrana yazdırın
+        double totalPrice = calculateTotalPrice(smartPhoneArray);
+        System.out.println("Toplam fiyat: £ " + totalPrice );
+    }
+
+    public static double calculateTotalPrice(SmartPhone[] smartPhoneArray) {
+        double totalPrice = 0;
+        for (SmartPhone phone : smartPhoneArray) {
+            totalPrice += phone.price;
+        }
+        return totalPrice;
+    }
+}
